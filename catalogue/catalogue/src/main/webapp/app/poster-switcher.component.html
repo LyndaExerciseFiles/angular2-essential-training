@@ -1,0 +1,15 @@
+<div style="display:flex; flex-direction: row;">
+  <div class="arrow-container">
+    <span class="arrow arrow-prev" (click)="onPrev()" *ngIf="posters && posters.length>1"></span>
+  </div>
+  <div style="flex-grow:1;">
+    <div *ngFor="let poster of posters">
+      <div *ngIf="poster.selected">
+        <img [mwFullSize]="poster.isAvailableFullSize" class="movie-poster" src="{{ poster && poster.imgSrc ? poster.imgSrc : './media/comingsoon.png' }}"/>
+      </div>
+    </div>
+  </div>
+  <div class="arrow-container">
+    <span class="arrow arrow-next" (click)="onNext()" *ngIf="posters && posters.length>1"></span>
+  </div>
+</div>

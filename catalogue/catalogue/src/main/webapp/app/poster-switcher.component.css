@@ -1,0 +1,55 @@
+.current-poster:before {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  border-right:10px solid black; 
+}
+
+.current-poster:after {
+  width: 0; 
+  height: 0; 
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid black;
+}
+
+.movie-poster{
+  display:block;
+  margin:auto;
+  width:50%;
+  transform: scale(0.5);
+}
+
+.full-size.full-size-hovering{
+  transform: scale(1);
+}
+
+.arrow-container{
+  position: relative;
+  width: 40px;
+}
+
+.arrow{
+  position: absolute;
+  top: 50%;
+  height: 40px;
+  margin-top: -20px;
+  cursor: pointer;
+  width: 40px;
+}
+
+.arrow-next{
+  background-image: url("./media/arrow-next.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.arrow-prev{
+  transform: rotate(180deg);
+  background-image: url("./media/arrow-next.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
