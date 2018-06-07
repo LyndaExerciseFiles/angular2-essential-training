@@ -63,13 +63,13 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+			<!--<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.6</version>
 			</plugin>
 
-			<!-- Plugin to execute command  "npm install" and "npm run build" inside /angular directory -->
+			&lt;!&ndash; Plugin to execute command  "npm install" and "npm run build" inside /angular directory &ndash;&gt;
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
@@ -79,7 +79,7 @@
 					<installDirectory>temp</installDirectory>
 				</configuration>
 				<executions>
-					<!--It will install nodejs and npm -->
+					&lt;!&ndash;It will install nodejs and npm &ndash;&gt;
 					<execution>
 						<id>install node and npm</id>
 						<goals>
@@ -91,7 +91,7 @@
 						</configuration>
 					</execution>
 
-					<!--It will execute command "npm install" inside "/angular" directory -->
+					&lt;!&ndash;It will execute command "npm install" inside "/angular" directory &ndash;&gt;
 					<execution>
 						<id>npm install</id>
 						<goals>
@@ -102,7 +102,7 @@
 						</configuration>
 					</execution>
 
-					<!--It will execute command "npm build" inside "/angular" directory to clean and create "/dist" directory -->
+					&lt;!&ndash;It will execute command "npm build" inside "/angular" directory to clean and create "/dist" directory &ndash;&gt;
 					<execution>
 						<id>npm build</id>
 						<goals>
@@ -115,7 +115,7 @@
 				</executions>
 			</plugin>
 
-			<!-- Plugin to copy the content of /angular/dist/ directory to output directory (ie/ /target/transactionManager-1.0/) -->
+			&lt;!&ndash; Plugin to copy the content of /angular/dist/ directory to output directory (ie/ /target/transactionManager-1.0/) &ndash;&gt;
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -138,7 +138,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>-->
 
 		</plugins>
 	</build>
