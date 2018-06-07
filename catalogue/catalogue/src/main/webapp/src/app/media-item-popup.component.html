@@ -1,0 +1,25 @@
+<div id="popup1" class="overlay" [hidden]="isClosed()">
+	<div class="popup">
+		<h2>Media Item Preview</h2>
+		<a class="close" (click)="onClose()">&times;</a>
+		<div class="content">
+      <div class="row">
+        <mw-poster-switcher [posters]="getPosterList()"></mw-poster-switcher>
+        <div class="movie-description">
+          <div>
+            <label>Name : {{ mediaItem ? mediaItem.name : "" }}</label>
+          </div>
+          <div>
+            <label>Watched : {{ mediaItem ? (mediaItem.watchedOn | date: 'shortDate') : "" }}</label>
+          </div>
+          <div>
+            <label>Category: {{ mediaItem ? mediaItem.category : "" }}</label>
+          </div>
+          <div>
+            <label>Year: {{ mediaItem ? mediaItem.year : "" }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>

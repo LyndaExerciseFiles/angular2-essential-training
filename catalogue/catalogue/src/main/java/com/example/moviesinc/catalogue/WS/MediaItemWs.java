@@ -18,13 +18,13 @@ public class MediaItemWs {
     public MediaItemService mediaItemService;
 
     @GetMapping
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<MediaItem> findMediaItems(@RequestParam(defaultValue="All") String medium) {
         return mediaItemService.findMediaItems(medium);
     }
 
     @PostMapping
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:4200")
     public void addMediaItem(@RequestBody MediaItem mediaItem) {
         mediaItemService.save(mediaItem);
     }

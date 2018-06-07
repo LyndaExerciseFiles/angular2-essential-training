@@ -11,6 +11,7 @@ import java.util.List;
 @Service
 public class MediaItemBOImpl implements MediaItemBO {
 
+    @Autowired
     private MediaItemDAO mediaItemDAO;
 
     @Override

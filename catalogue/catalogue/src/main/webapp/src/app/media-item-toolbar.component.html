@@ -1,0 +1,15 @@
+<div>
+  <form [formGroup]="form"
+  (ngSubmit)="filterMediaItem(form.value)">
+    <input type="text" name="value" id="value" formControlName="value">
+    <select name="propertyName" id="propertyName" formControlName="propertyName" (change)="onChangeProperty($event.target.value)">
+        <option *ngFor="let mediaItemProperty of lookupLists.mediaItemProperties" value="{{mediaItemProperty.lookupText}}">{{mediaItemProperty.lookupText}}</option>
+    </select>
+    <select name="operator" id="operator" formControlName="operator">
+      <ng-container *ngFor="let operator of lookupLists.operators">
+        <option *ngIf="operator.type === getPropertyType() || operator.type === 'any'" value="{{operator.lookupText}}">{{operator.lookupText}}</option>
+      </ng-container>
+    </select>
+    <button type="submit" [disabled]="!form.valid">Filter</button>
+  </form>
+</div>
