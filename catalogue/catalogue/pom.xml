@@ -6,7 +6,7 @@
 	<groupId>com.example.moviesinc</groupId>
 	<artifactId>catalogue</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>catalogue</name>
 	<description>Demo project for Spring Boot</description>
@@ -40,6 +40,11 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -161,7 +166,7 @@
 				<version>2.15</version>
 				<configuration>
 					<!-- Sets the VM argument line used when unit tests are run. -->
-					<argLine>@{surefireArgLine}</argLine>
+					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
 				</configuration>
 			</plugin>
 
