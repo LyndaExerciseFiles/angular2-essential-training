@@ -1,7 +1,6 @@
 package com.example.moviesinc.catalogue.Service;
 
 import com.example.moviesinc.BaseBOTest;
-import com.example.moviesinc.catalogue.DAO.MediaItemDAO;
 import com.example.moviesinc.catalogue.Model.MediaItem;
 import org.junit.Before;
 import org.junit.Test;
