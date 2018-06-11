@@ -169,7 +169,6 @@
 				</executions>
 				<configuration>
 					<karmaExecutable>${project.basedir}/src/main/webapp/node_modules/.bin/karma</karmaExecutable>
-					<configFile>${project.basedir}/src/main/webapp/src/karma.conf.ci.js</configFile>
 					<junitReportFile>${project.basedir}/target/surefire-reports/test-results.xml</junitReportFile>
 					<reportsDirectory>${project.basedir}/karma-reports</reportsDirectory>
 					<browsers>PhantomJS</browsers>
