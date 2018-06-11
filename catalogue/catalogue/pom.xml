@@ -156,6 +156,30 @@
 			</plugin>
 
 			<plugin>
+				<groupId>com.kelveden</groupId>
+				<artifactId>maven-karma-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<karmaExecutable>${project.basedir}/src/main/webapp/node_modules/.bin/karma</karmaExecutable>
+					<configFile>${project.basedir}/src/main/webapp/src/karma.conf.ci.js</configFile>
+					<junitReportFile>${project.basedir}/target/surefire-reports/test-results.xml</junitReportFile>
+					<reportsDirectory>${project.basedir}/karma-reports</reportsDirectory>
+					<browsers>PhantomJS</browsers>
+					<autoWatch>false</autoWatch>
+					<singleRun>true</singleRun>
+					<reporters>dots, junit</reporters>
+				</configuration>
+			</plugin>
+
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.15</version>
