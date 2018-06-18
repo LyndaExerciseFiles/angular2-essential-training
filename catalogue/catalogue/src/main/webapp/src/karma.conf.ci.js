@@ -5,7 +5,7 @@ module.exports = function(config) {
 
 	config.set({
 		browsers : [ 'PhantomJS' ],
-		reporters : [ 'dots, junit' ],
+		reporters : [ 'junit' ],
 		singleRun : true,
 		autoWatch : false
 	}) 

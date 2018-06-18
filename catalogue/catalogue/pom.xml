@@ -142,6 +142,27 @@
 						</configuration>
 					</execution>
 
+					<execution>
+						<id>angular-cli install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>install --no-optional -g angular-cli</arguments>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>npm run ng-test</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run-script test</arguments>
+						</configuration>
+					</execution>
+
 					<!--It will execute command "npm build" inside "/angular" directory to clean and create "/dist" directory -->
 					<execution>
 						<id>npm build</id>
@@ -153,29 +174,6 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>com.kelveden</groupId>
-				<artifactId>maven-karma-plugin</artifactId>
-				<version>1.6</version>
-				<executions>
-					<execution>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>start</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<karmaExecutable>${project.basedir}/src/main/webapp/node_modules/.bin/karma</karmaExecutable>
-					<junitReportFile>${project.basedir}/target/surefire-reports/test-results.xml</junitReportFile>
-					<reportsDirectory>${project.basedir}/karma-reports</reportsDirectory>
-					<browsers>PhantomJS</browsers>
-					<autoWatch>false</autoWatch>
-					<singleRun>true</singleRun>
-					<reporters>dots, junit</reporters>
-				</configuration>
 			</plugin>
 
 			<plugin>
