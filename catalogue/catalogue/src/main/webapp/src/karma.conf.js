@@ -17,10 +17,14 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../../../../coverage'),
-      reports: ['html', 'lcovonly'],
-      fixWebpackSourcePaths: true
+    preprocessors: {
+        './src/test.ts': ['@angular/cli']
+    },
+    mime: {
+      'text/x-typescript': ['ts', 'tsx']
+    },
+    junitReporter: {
+        outputFile: './../../../target/jacoco-ut/TESTS-xunit.xml'
     },
     reporters: ['junit', 'coverage', 'progress'],
     junitReporter: {
