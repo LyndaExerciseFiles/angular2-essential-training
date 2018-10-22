@@ -21,13 +21,9 @@ module.exports = function (config) {
       'text/x-typescript': ['ts', 'tsx']
     },
     junitReporter: {
-        outputFile: './../../../target/jacoco-ut/TESTS-xunit.xml'
+        outputDir: '../../../../target/surefire-reports'
     },
     reporters: ['junit', 'coverage', 'progress'],
-    junitReporter: {
-        outputDir: '../../../../target/surefire-reports/karma-reports',
-        suite: ''
-    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
