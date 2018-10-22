@@ -44,4 +44,8 @@ describe('MediaItemComponent', ()=> {
 		expect(element.querySelectorAll('.delete').length).toEqual(1);
 	}));
 
+	it('should have 1 svg', async(() => {
+  		expect(element.querySelectorAll('svg').length).toEqual(1);
+  	}));
+
 })

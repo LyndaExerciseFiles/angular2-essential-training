@@ -17,9 +17,6 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    preprocessors: {
-        './src/test.ts': ['@angular/cli']
-    },
     mime: {
       'text/x-typescript': ['ts', 'tsx']
     },
