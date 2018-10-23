@@ -21,8 +21,8 @@ export class MediaItemListComponent {
   ngOnInit() {
     this.paramsSubscription = this.activatedRoute.params
       .subscribe(params => {
-        let medium = params['medium'];
-        if(medium.toLowerCase() === 'all') {
+        let medium : string = params['medium'];
+        if(medium === 'all') {
           medium = '';
         }
         this.getMediaItems(medium);
