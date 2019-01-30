@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface MediaItemDAO  {
 
-    List<MediaItem> findMediaItems(String medium);
+    List<MediaItem> findMediaItems(String medium, String movieName, String category);
 
     void save(MediaItem mediaItem);
 

@@ -15,8 +15,8 @@ public class MediaItemBOImpl implements MediaItemBO {
     private MediaItemDAO mediaItemDAO;
 
     @Override
-    public List<MediaItem> findMediaItems(String medium) {
-        return mediaItemDAO.findMediaItems(medium);
+    public List<MediaItem> findMediaItems(String medium, String movieName, String category) {
+        return mediaItemDAO.findMediaItems(medium, movieName, category);
     }
 
     @Override

@@ -11,42 +11,31 @@ import * as _ from "lodash";
 export class MediaItemToolbarComponent{
     constructor(private formBuilder: FormBuilder, @Inject(lookupListToken) public lookupLists) {}
     form;
-    propertyName;
+    category;
     @Output() filter = new EventEmitter();
 
     ngOnInit() {
         this.form = this.formBuilder.group({
-            value : this.formBuilder.control(""),
-            propertyName : this.formBuilder.control("name"),
-            operator: this.formBuilder.control("equals"),
+            movieName : this.formBuilder.control(""),
+            category : this.formBuilder.control("name")
         });
-        this.propertyName = "name";
+        this.category = "name";
     }
 
     onChangeProperty(value) {
-        this.propertyName = value
+        this.category = value
     }
 
     getPropertyType() {
-        let propertyName = this.propertyName ? this.propertyName : "name";
+        let category = this.category ? this.category : "name";
         let lookup = _.find(this.lookupLists.mediaItemProperties , function(obj:any){
-            return obj.lookupText === propertyName;
+            return obj.lookupText === category;
         });
         
         return lookup.type;
     }
 
     filterMediaItem(formInput) {
-        let type = this.getPropertyType();
-
-        //handle number type
-        if(type === "number"){
-            formInput.value = parseInt(formInput.value, 10);
-        }
-
-        //insert type
-        formInput.type = type;
-        
         this.filter.emit(formInput);
     }
 }

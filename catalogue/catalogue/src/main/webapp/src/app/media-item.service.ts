@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http, URLSearchParams, Response } from '@angular/http';
+import { Http, URLSearchParams, Response, Headers } from '@angular/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 export class Filter{
-  propertyName : string;
-  operator : string;
-  type: string;
-  value: any;
+  movieName : string;
+  category: any;
 }
 
 @Injectable()
@@ -17,9 +15,9 @@ export class MediaItemService{
 
   isValid(filter) {
     if(filter.type === "string"){
-      filter.value = filter.value.trim();
+      filter.category = filter.category.trim();
     }
-    return filter.operator !== "" && filter.value && filter.value !== "" && filter.propertyName !== "";
+    return filter.operator !== "" && filter.category && filter.category !== "" && filter.propertyName !== "";
   }
 
   get(medium, filter?: Filter) : Observable<any[]> {
@@ -28,6 +26,9 @@ export class MediaItemService{
     if(filter && this.isValid(filter)){
       searchParams.append('filter', JSON.stringify(filter));
     }
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    headers.append('Accept', 'application/json');
     return this.http.get('mediaitems', { search: searchParams })
       .pipe(map(response => {
         return response.json();
