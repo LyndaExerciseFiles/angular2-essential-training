@@ -54,10 +54,10 @@ public class MediaItemServiceTest extends BaseBOTest {
         MediaItem mediaItem = prepareMediaItemData();
         List<MediaItem> mediaItemList = new ArrayList<>();
         mediaItemList.add(mediaItem);
-        when(mediaItemBO.findMediaItems(anyString())).thenReturn(mediaItemList);
+        when(mediaItemBO.findMediaItems(anyString(),anyString(),anyString())).thenReturn(mediaItemList);
 
-        mediaItemService.findMediaItems("Movies");
-        verify(mediaItemBO).findMediaItems("Movies");
+        mediaItemService.findMediaItems("Movies", "The Small Tall", "Comedy");
+        verify(mediaItemBO).findMediaItems("Movies", "The Small Tall", "Comedy");
     }
 
     @Test
