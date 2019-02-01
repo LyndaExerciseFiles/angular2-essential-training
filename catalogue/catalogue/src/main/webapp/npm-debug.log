@@ -1,0 +1,22 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'E:\\Project\\angular2-essential-training\\catalogue\\catalogue\\temp\\node\\node.exe',
+1 verbose cli   'E:\\Project\\angular2-essential-training\\catalogue\\catalogue\\temp\\node\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'prod' ]
+2 info using npm@3.9.5
+3 info using node@v8.9.0
+4 verbose stack Error: ENOENT: no such file or directory, open 'E:\Project\angular2-essential-training\catalogue\catalogue\src\main\webapp\package.json'
+5 verbose cwd E:\Project\angular2-essential-training\catalogue\catalogue\src\main\webapp
+6 error Windows_NT 10.0.16299
+7 error argv "E:\\Project\\angular2-essential-training\\catalogue\\catalogue\\temp\\node\\node.exe" "E:\\Project\\angular2-essential-training\\catalogue\\catalogue\\temp\\node\\node_modules\\npm\\bin\\npm-cli.js" "run" "prod"
+8 error node v8.9.0
+9 error npm  v3.9.5
+10 error path E:\Project\angular2-essential-training\catalogue\catalogue\src\main\webapp\package.json
+11 error code ENOENT
+12 error errno -4058
+13 error syscall open
+14 error enoent ENOENT: no such file or directory, open 'E:\Project\angular2-essential-training\catalogue\catalogue\src\main\webapp\package.json'
+15 error enoent ENOENT: no such file or directory, open 'E:\Project\angular2-essential-training\catalogue\catalogue\src\main\webapp\package.json'
+15 error enoent This is most likely not a problem with npm itself
+15 error enoent and is related to npm not being able to find a file.
+16 verbose exit [ -4058, true ]
