@@ -14,8 +14,8 @@ public class MediaItemServiceImpl implements MediaItemService {
 
 
     @Override
-    public List<MediaItem> findMediaItems(String medium) {
-        return mediaItemBO.findMediaItems(medium);
+    public List<MediaItem> findMediaItems(String medium, String mediaName, String category) {
+        return mediaItemBO.findMediaItems(medium, mediaName, category);
     }
 
     @Override
